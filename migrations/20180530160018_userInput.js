@@ -1,14 +1,15 @@
-
 exports.up = function(knex, Promise) {
-    return knex.schema.createTable("userInput", table => {
-      table.increments();
-      table.text("startCity");
-      table.text("startState");
-      table.text("endCity");
-      table.text("endState");
-    });
-  };
-  
-  exports.down = function(knex, Promise) {
-    return knex.schema.dropTableIfExists("userInput");
-  };
+  return knex.schema.createTable("user_input", table => {
+    table.string("userName");
+    table.string("startCity");
+    table.string("startState");
+    table.string("startZip");
+    table.string("endCity");
+    table.string("endState");
+    table.string("endZip");
+  });
+};
+
+exports.down = function(knex, Promise) {
+  return knex.schema.dropTableIfExists("user_input");
+};

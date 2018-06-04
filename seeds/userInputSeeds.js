@@ -1,14 +1,28 @@
-
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('userInput').del()
-    .then(function () {
+  return knex("user_input")
+    .del()
+    .then(function() {
       // Inserts seed entries
-      return knex('userInput').insert([
-        {id: 1, startCity: 'Denver'},
-        {id: 2, startState: 'CO'},
-        {id: 3, endCity: 'Denver'},
-        {id: 3, endState: 'CO'}
+      return knex("user_input").insert([
+        {
+          userName: "Jeff",
+          startCity: "Denver",
+          startState: "CO",
+          startZip: "80210",
+          endCity: "Denver",
+          endState: "CO",
+          endZip: "80202"
+        },
+        {
+          userName: "John",
+          startCity: "Chicago",
+          startState: "IL",
+          startZip: "60007",
+          endCity: "Chicago",
+          endState: "IL",
+          endZip: "60106"
+        }
       ]);
     });
 };
